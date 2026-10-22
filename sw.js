@@ -1,6 +1,6 @@
-/* Baraka Al-Quran service worker: keeps the app working offline.
+/* Barakat Al-Quran service worker: keeps the app working offline.
    Raise CACHE each time you publish a new version so devices fetch the update. */
-const CACHE='baraka-v334';
+const CACHE='baraka-v380';
 const FILES=['./','index.html','privacy.html','manifest.webmanifest','Sortable.min.js','fonts/fonts.css','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png','icons/favicon-32.png','icons/favicon-48.png'];
 self.addEventListener('install',e=>{e.waitUntil((async()=>{const c=await caches.open(CACHE);await c.addAll(FILES);const css=await (await c.match('fonts/fonts.css')).text();const urls=[...css.matchAll(/url\(\.\/([^)]+)\)/g)].map(m=>'fonts/'+m[1]);await c.addAll(urls);self.skipWaiting()})())});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{for(const k of await caches.keys())if(k!==CACHE)await caches.delete(k);await self.clients.claim()})())});
