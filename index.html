@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <style>html.bpre{overflow:hidden}html.bpre::before{content:"بركة القرآن  ·  Barakat Al-Quran";position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;text-align:center;padding:24px;background:#6B82B6;color:#fff;font:700 24px/1.4 system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}</style>
 <script>setTimeout(function(){document.documentElement.classList.remove("bpre")},10000)</script>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <title>Barakat Al-Quran</title>
 <meta name="theme-color" content="#3C4A5C">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1434,8 +1434,8 @@ html[lang=ar] #welcome .wen{display:none}
 .nbp2.warn{border-color:#B3261E;color:#B3261E}
 .nd[data-act=ntrace]{--c:var(--c-bl)}
 #notes.trk #npage>:not(.ndr){opacity:.15}
-#notes.trk #npage:has(.ndr.on){touch-action:pan-y pinch-zoom;-webkit-user-select:none;user-select:none}
-#notes.trk .ndr.on{touch-action:pan-y pinch-zoom}
+#notes.trk #npage:has(.ndr.on){touch-action:pan-y;-webkit-user-select:none;user-select:none}
+#notes.trk .ndr.on{touch-action:pan-y}
 .nbsw.on{box-shadow:0 0 0 2.5px var(--ink)}
 .trsp{flex:1}.hwc{font:700 12.5px Tajawal,Manrope,sans-serif;color:var(--mut)}
 .trw{width:36px;height:30px;border-radius:8px;border:1.5px solid var(--line);background:var(--card);display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
@@ -1738,6 +1738,8 @@ html[lang=ar] #welcome .wen{display:none}
 <style id="wxswap">.wx .wxtb{font:700 13px/1.3 Tajawal,Manrope,Cairo,sans-serif;padding:7px 9px;gap:7px}.wxtl{gap:5px}.wxcats .wxq{grid-column:2;grid-row:1/3}.wxcats .wxp{grid-column:1;grid-row:1}.wxcats .wxf{grid-column:1;grid-row:2}.wxtl i,.wxtb{display:flex;align-items:center;gap:8px;width:100%;font:700 14px/1.3 Tajawal,Manrope,Cairo,sans-serif;padding:8px 10px;border-radius:12px;border:0;background:color-mix(in srgb,var(--card),transparent 40%);color:var(--ink);text-align:start;cursor:pointer}.wxtb:active{transform:scale(.98)}.wxtb u{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--card);text-decoration:none;font:800 11px Tajawal,sans-serif}.wxtb.wxall{background:var(--wx-btn);color:var(--wx-btnink)}.wxtb.wxall u{background:rgba(255,255,255,.18)}</style>
 <style id="qbcss2">.qbhd{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}.qbtt{font:800 15px Tajawal,Manrope,Cairo,sans-serif;color:var(--ink)}.qbct{flex:none;font:800 14px Tajawal,Manrope,sans-serif;padding:4px 12px;border-radius:99px;background:var(--soft);color:var(--ink);font-variant-numeric:tabular-nums}.qbpg{height:6px;border-radius:99px;background:var(--soft);overflow:hidden;margin-bottom:12px}.qbpg i{display:block;height:100%;border-radius:99px;background:var(--wx-btn,var(--ink));transition:width .25s}.wxtb .wxtn{flex:1;min-width:0}.wxtc{flex:none;font:700 11px Tajawal,sans-serif;font-style:normal;padding:2px 8px;border-radius:99px;background:var(--card);opacity:.9}.wxtb.wxall .wxtc{background:rgba(255,255,255,.18)}</style>
 <style id="qbq">.qbq{font-family:var(--qf),"KFGQPC Hafs","Amiri Quran","Scheherazade New",serif;font-size:1.35em;line-height:2.4;font-weight:400;padding:0 .15em;white-space:nowrap}.rc h3 .qbq{display:inline-block}</style>
+<style id="zfix">#ndock{grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}#notes,#nframe,#nstk,#ndock,#hdr{-webkit-text-size-adjust:100%}</style>
+<style id="flsz">.qprev .ar{font-size:1.12em;line-height:2;opacity:1}.qprev{opacity:.9}#qfl .vtw{font-size:calc(var(--ar) - 3px);line-height:1.8}#qfl .fl,#qfl .fw{font-size:calc(var(--ar) - 3px)}</style>
 <style id="mncss">#npage .mw.wmn{color:var(--wmc);text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:.28em;cursor:pointer}
 :root{--wmc:#9A4A1E}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--wmc:#F0B27A}}:root[data-theme="dark"]{--wmc:#F0B27A}
 #wmtip{position:fixed;z-index:200;max-width:min(320px,calc(100vw - 16px));background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:10px 14px 12px;box-shadow:0 8px 28px rgba(0,0,0,.22);display:flex;flex-direction:column;gap:4px;pointer-events:auto}
@@ -3976,6 +3978,7 @@ document.addEventListener('change',e=>{const id=e.target.id;if(!/^cm-[sa][ab]$/.
  if(kind==='s'){const s=+e.target.value;C[side]=D.s[s-1]}else{const s=sOf(C[side]);C[side]=D.s[s-1]+clampN(e.target.value,1,D.c[s-1])-1}
  Object.keys(C.hl).forEach(k=>{if(k[0]===side)delete C.hl[k]});Object.keys(C.ul).forEach(k=>{if(k[0]===side)delete C.ul[k]});C.saved=false;C.eid=C.eid;cmRender()});
 document.addEventListener('change',e=>{if(e.target.id==='npg'){N.pg=clampN(e.target.value,1,604);nRender()}});
+(function(){const stop=e=>{if(e.cancelable)e.preventDefault()};['gesturestart','gesturechange','gestureend'].forEach(t=>document.addEventListener(t,stop,{passive:false}));document.addEventListener('touchmove',e=>{if(e.touches&&e.touches.length>1&&e.cancelable)e.preventDefault()},{passive:false})})();
 (function(){const F=document.getElementById('nframe');if(!F)return;let d0=0;const dist=e=>Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
  F.addEventListener('touchstart',e=>{if(e.touches.length===2)d0=dist(e);else d0=0},{passive:true});
  F.addEventListener('touchmove',e=>{if(e.touches.length!==2||!d0)return;const r=dist(e)/d0;if(r>1.2&&N.z<NZ.length-1){N.z++;d0=dist(e);nRender()}else if(r<.83&&N.z>0){N.z--;d0=dist(e);nRender()}},{passive:true});
